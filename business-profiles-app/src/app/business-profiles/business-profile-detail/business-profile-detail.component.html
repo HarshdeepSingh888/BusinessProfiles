@@ -1,0 +1,41 @@
+<div
+  class="container container-margin"
+  *ngIf="businessProfileDetails$ | async as businessProfileDetails"
+>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Basic Information</h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        {{ businessProfileDetails.title }}
+      </h6>
+      <p class="card-text">
+        {{ businessProfileDetails.description }}
+      </p>
+      <p class="card-text">
+        {{ businessProfileDetails.contactNumber }}
+      </p>
+      <a href="#" class="card-link">{{ businessProfileDetails.about }}</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Customer reviews</h5>
+
+      <ul
+        *ngIf="
+          businessProfileDetails.customerReviews.length > 0;
+          else noReviews
+        "
+      >
+        <li
+          *ngFor="let review of businessProfileDetails.customerReviews"
+          class="card-text"
+        >
+          {{ review }}
+        </li>
+      </ul>
+      <ng-template #noReviews>No reviews</ng-template>
+    </div>
+  </div>
+</div>

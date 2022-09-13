@@ -1,0 +1,30 @@
+<div class="container main-container">
+  <div class="row container-flex">
+    <div class="col">
+      Username:
+    </div>
+    <div class="col">
+      <input type="text" #inputUser />
+    </div>
+  </div>
+
+  <div class="row container-flex">
+    <div class="col">
+      Password:
+    </div>
+    <div class="col">
+      <input type="password" #inputPassword />
+    </div>
+  </div>
+
+  <div class="row container-flex">
+    <div class="col">
+      <input
+        class="btn btn-primary button-margin"
+        type="button"
+        (click)="onLogin(inputUser.value, inputPassword.value)"
+        value="login"
+      />
+    </div>
+  </div>
+</div>

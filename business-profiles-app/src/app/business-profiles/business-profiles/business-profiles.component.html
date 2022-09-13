@@ -1,0 +1,5 @@
+<div *ngFor="let businessProfile of businessProfiles$ | async">
+  <app-business-profile
+    [businessProfile]="businessProfile"
+  ></app-business-profile>
+</div>
